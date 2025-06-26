@@ -132,7 +132,7 @@ const App = () => {
         contact: 'Contatti',
         hours: 'Orari',
         hours_text: 'Martedì - Domenica\n11:00 - 23:30\nLunedì: Chiuso',
-        copyright: '© 2024 Star Pizzeria&Kebap. Tutti i diritti riservati.'
+        copyright: '© 2025 Star Pizzeria&Kebap. Tutti i diritti riservati.'
       }
     },
     en: {
@@ -249,10 +249,10 @@ const App = () => {
   // Complete real menu items from the original menu
   const menuItems = {
     pizze_classiche: [
-      { name: "FOCACCIA LISCIA", description: "Pane oregano", price: "3.50€", baby: "4.00€" },
-      { name: "MARINARA", description: "Pomodoro, aglio, origano", price: "5.50€", baby: "6.00€" },
-      { name: "MARGHERITA", description: "Pomodoro, mozzarella", price: "6.00€", baby: "6.50€" },
-      { name: "COTTO", description: "Pomodoro, mozzarella, prosciutto cotto", price: "6.50€", baby: "7.00€" },
+      { name: "FOCACCIA LISCIA", description: "Pane oregano", price: "4.50€"},
+      { name: "MARINARA", description: "Pomodoro, aglio, origano", price: "6.00€", baby: "5.00€" },
+      { name: "MARGHERITA", description: "Pomodoro, mozzarella", price: "7.00€", baby: "6.00€" },
+      { name: "COTTO", description: "Pomodoro, mozzarella, prosciutto cotto", price: "7.50€", baby: "6.50€" },
       { name: "FUNGHI", description: "Pomodoro, mozzarella, funghi", price: "6.50€", baby: "7.00€" },
       { name: "GORGONZOLA", description: "Pomodoro, mozzarella, gorgonzola", price: "6.50€", baby: "7.50€" },
       { name: "MELANZANE", description: "Pomodoro, mozzarella, melanzane alla griglia", price: "6.50€", baby: "7.00€" },
