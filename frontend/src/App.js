@@ -54,44 +54,45 @@ const App = () => {
     {
       name: "Marco Rossi",
       rating: 5,
-      text: "Atmosfera incredibile e pizza fantastica! Il servizio è impeccabile e l'ambiente è molto elegante.",
+      text: "Pizza incredibile con impasto a lenta lievitazione! Il kebab è autentico e saporito. Locale accogliente e servizio ottimo.",
       date: "2 settimane fa"
     },
     {
       name: "Giulia Bianchi",
       rating: 5,
-      text: "Il miglior ristorante della zona! I kebab sono deliziosi e la presentazione dei piatti è da alta cucina.",
+      text: "Il miglior kebab di Cassano d'Adda! Ingredienti freschi e carne selezionata. Consiglio vivamente i tavoli all'aperto.",
       date: "1 mese fa"
     },
     {
       name: "Alessandro Conti",
       rating: 5,
-      text: "Esperienza culinaria eccezionale. Ingredienti di qualità superiore e atmosfera rilassante.",
+      text: "Tradizione italiana e sapori autentici del Medio Oriente si incontrano perfettamente. Take away veloce e qualità garantita.",
       date: "3 settimane fa"
     }
   ];
 
-  // Menu items
+  // Real menu items from the original website
   const menuItems = {
+    pizze: [
+      { name: "Margherita", description: "Pizza classica con pomodoro e mozzarella", price: "€8.00" },
+      { name: "Diavola", description: "Pizza piccante con salame e peperoncino", price: "€10.00" },
+      { name: "Quattro Stagioni", description: "Pizza con prosciutto, funghi, carciofi e olive", price: "€12.00" }
+    ],
+    kebab: [
+      { name: "Kebab di Pollo", description: "Kebab con carne di pollo marinata e verdure fresche", price: "€7.00" },
+      { name: "Kebab di Manzo", description: "Kebab con carne di manzo selezionata e salsa speciale", price: "€9.00" }
+    ],
     antipasti: [
-      { name: "Antipasto della Casa", description: "Selezione di salumi e formaggi locali", price: "€15" },
-      { name: "Bruschette Tradizionali", description: "Pomodori freschi, basilico e olio extravergine", price: "€8" },
-      { name: "Antipasto Mediterraneo", description: "Olive, feta, verdure grigliate", price: "€12" }
-    ],
-    primi: [
-      { name: "Spaghetti Carbonara", description: "Ricetta tradizionale romana", price: "€14" },
-      { name: "Risotto ai Porcini", description: "Riso Carnaroli con funghi porcini", price: "€16" },
-      { name: "Penne all'Arrabbiata", description: "Pomodoro, aglio, peperoncino", price: "€12" }
-    ],
-    secondi: [
-      { name: "Pizza Margherita", description: "Pomodoro, mozzarella, basilico", price: "€10" },
-      { name: "Pizza Diavola", description: "Pomodoro, mozzarella, salame piccante", price: "€13" },
-      { name: "Kebab Speciale", description: "Carne marinata, verdure fresche, salse", price: "€11" }
+      { name: "Falafel", description: "Polpette di ceci fritte servite con salsa tahini", price: "€5.00" },
+      { name: "Hummus", description: "Crema di ceci servita con pane pita caldo", price: "€4.00" }
     ],
     dolci: [
-      { name: "Tiramisù della Casa", description: "Ricetta della nonna", price: "€7" },
-      { name: "Cannoli Siciliani", description: "Ricotta fresca e gocce di cioccolato", price: "€6" },
-      { name: "Gelato Artigianale", description: "3 gusti a scelta", price: "€5" }
+      { name: "Baklava", description: "Dolce tradizionale a base di pasta fillo e noci", price: "€3.50" },
+      { name: "Tiramisù", description: "Dolce al caffè e mascarpone della tradizione italiana", price: "€4.50" }
+    ],
+    bevande: [
+      { name: "Acqua", description: "Acqua naturale o frizzante", price: "€1.50" },
+      { name: "Coca-Cola", description: "Bibita gassata", price: "€2.00" }
     ]
   };
 
@@ -109,7 +110,7 @@ const App = () => {
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="nav-container">
           <div className="nav-logo">
-            <h2 className="logo-text">Star Pizzeria & Kebab</h2>
+            <h2 className="logo-text">Star Pizzeria&Kebap</h2>
           </div>
           
           <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
@@ -161,8 +162,8 @@ const App = () => {
           <div className="hero-overlay"></div>
         </div>
         <div className="hero-content">
-          <h1 className="hero-title">Star Pizzeria & Kebab</h1>
-          <p className="hero-subtitle">Dove tradizione e sapore si incontrano</p>
+          <h1 className="hero-title">Star Pizzeria&Kebap</h1>
+          <p className="hero-subtitle">Dove la tradizione della pizzeria incontra l'autenticità del kebab</p>
           <button 
             className="hero-cta"
             onClick={() => scrollToSection('prenotazioni')}
@@ -187,29 +188,29 @@ const App = () => {
               />
             </div>
             <div className="about-content">
-              <h2 className="section-title">La Nostra Storia</h2>
+              <h2 className="section-title">Il Nostro Locale</h2>
               <p className="about-text">
-                Da tre generazioni, la famiglia Star porta avanti la tradizione culinaria italiana 
-                con passione e dedizione. Nel nostro ristorante, ogni piatto racconta una storia 
-                di sapori autentici e ingredienti selezionati.
+                Scopri il nostro locale accogliente, dove la tradizione della pizzeria incontra 
+                l'autenticità del kebab. Offriamo un'ampia scelta di pizze preparate con impasto 
+                a lenta lievitazione naturale e kebab realizzati con carne selezionata e ingredienti freschi.
               </p>
               <p className="about-text">
-                Unendo la tradizione italiana alla cultura mediterranea, offriamo un'esperienza 
-                gastronomica unica che celebra il meglio di entrambi i mondi. La nostra cucina 
-                è un ponte tra culture, dove pizza e kebab convivono in perfetta armonia.
+                Che tu scelga di gustare i nostri piatti sul posto, grazie ai comodi posti a sedere, 
+                o di portarli via con il servizio d'asporto, la qualità è sempre garantita. Perfetto 
+                per una pausa pranzo veloce o una cena informale.
               </p>
               <div className="about-features">
                 <div className="feature">
                   <span className="feature-icon">🍕</span>
-                  <span className="feature-text">Pizza Artigianale</span>
+                  <span className="feature-text">Impasto Lenta Lievitazione</span>
                 </div>
                 <div className="feature">
                   <span className="feature-icon">🥙</span>
-                  <span className="feature-text">Kebab Gourmet</span>
+                  <span className="feature-text">Carne Selezionata</span>
                 </div>
                 <div className="feature">
-                  <span className="feature-icon">👨‍🍳</span>
-                  <span className="feature-text">Ricette Tradizionali</span>
+                  <span className="feature-icon">🏠</span>
+                  <span className="feature-text">Tavoli All'aperto</span>
                 </div>
               </div>
             </div>
@@ -221,13 +222,16 @@ const App = () => {
       <section id="menu" className="menu-section">
         <div className="container">
           <h2 className="section-title center">Il Nostro Menu</h2>
-          <p className="section-subtitle center">Scopri i nostri piatti della tradizione</p>
+          <p className="section-subtitle center">Scopri i nostri piatti autentici</p>
           
           <div className="menu-categories">
             {Object.entries(menuItems).map(([category, items]) => (
               <div key={category} className="menu-category">
                 <h3 className="category-title">
-                  {category.charAt(0).toUpperCase() + category.slice(1)}
+                  {category === 'pizze' ? 'Pizze' : 
+                   category === 'kebab' ? 'Kebab' :
+                   category === 'antipasti' ? 'Antipasti' :
+                   category === 'dolci' ? 'Dolci' : 'Bevande'}
                 </h3>
                 <div className="menu-items">
                   {items.map((item, index) => (
@@ -283,22 +287,31 @@ const App = () => {
             <div className="booking-info">
               <h2 className="section-title">Prenota il Tuo Tavolo</h2>
               <p className="booking-text">
-                Vivi un'esperienza culinaria indimenticabile. Prenota il tuo tavolo 
-                e lasciati conquistare dai nostri sapori autentici.
+                Vivi un'esperienza culinaria autentica nel nostro locale accogliente. 
+                Prenota il tuo tavolo o ordina da asporto per gustare la qualità 
+                dei nostri piatti dove preferisci.
               </p>
               <div className="booking-features">
                 <div className="booking-feature">
                   <span className="feature-icon">🕒</span>
                   <div>
                     <strong>Orari di Apertura</strong>
-                    <p>Lun-Dom: 12:00 - 24:00</p>
+                    <p>Mar-Dom: 11:00 - 23:30</p>
+                    <p>Lunedì: Chiuso</p>
                   </div>
                 </div>
                 <div className="booking-feature">
                   <span className="feature-icon">📞</span>
                   <div>
                     <strong>Prenotazioni Telefoniche</strong>
-                    <p>+39 123 456 789</p>
+                    <p>+39 0363 376 006</p>
+                  </div>
+                </div>
+                <div className="booking-feature">
+                  <span className="feature-icon">🚗</span>
+                  <div>
+                    <strong>Servizi Disponibili</strong>
+                    <p>Take Away • Tavoli All'aperto • Parcheggio</p>
                   </div>
                 </div>
               </div>
@@ -359,6 +372,7 @@ const App = () => {
                     required
                   >
                     <option value="">Seleziona orario</option>
+                    <option value="11:00">11:00</option>
                     <option value="12:00">12:00</option>
                     <option value="13:00">13:00</option>
                     <option value="14:00">14:00</option>
@@ -366,6 +380,7 @@ const App = () => {
                     <option value="20:00">20:00</option>
                     <option value="21:00">21:00</option>
                     <option value="22:00">22:00</option>
+                    <option value="23:00">23:00</option>
                   </select>
                 </div>
               </div>
@@ -405,7 +420,7 @@ const App = () => {
                 <span className="contact-icon">📍</span>
                 <div>
                   <strong>Indirizzo</strong>
-                  <p>Via Roma 123, 00100 Roma, Italia</p>
+                  <p>Via Milano 13<br/>20062 Cassano D'adda, Italia</p>
                 </div>
               </div>
 
@@ -413,7 +428,7 @@ const App = () => {
                 <span className="contact-icon">📞</span>
                 <div>
                   <strong>Telefono</strong>
-                  <p>+39 123 456 789</p>
+                  <p>+39 0363 376 006</p>
                 </div>
               </div>
 
@@ -421,7 +436,7 @@ const App = () => {
                 <span className="contact-icon">✉️</span>
                 <div>
                   <strong>Email</strong>
-                  <p>info@starpizzeriakebab.it</p>
+                  <p>anilcocen2011@gmail.com</p>
                 </div>
               </div>
 
@@ -429,16 +444,24 @@ const App = () => {
                 <span className="contact-icon">🕒</span>
                 <div>
                   <strong>Orari di Apertura</strong>
-                  <p>Lunedì - Domenica: 12:00 - 24:00</p>
+                  <p>Martedì - Domenica: 11:00 - 23:30</p>
+                  <p>Lunedì: Chiuso</p>
                 </div>
               </div>
 
-              <div className="social-links">
-                <h4>Seguici sui Social</h4>
-                <div className="social-icons">
-                  <a href="#" className="social-icon">📘 Facebook</a>
-                  <a href="#" className="social-icon">📷 Instagram</a>
-                  <a href="#" className="social-icon">🐦 Twitter</a>
+              <div className="contact-item">
+                <span className="contact-icon">💳</span>
+                <div>
+                  <strong>Metodi di Pagamento</strong>
+                  <p>Contanti • Contactless • Mastercard<br/>VISA • Carta di debito • Maestro</p>
+                </div>
+              </div>
+
+              <div className="contact-item">
+                <span className="contact-icon">⭐</span>
+                <div>
+                  <strong>Servizi</strong>
+                  <p>Accessibile • Aria condizionata<br/>Tavoli all'aperto • Parcheggio • Take away</p>
                 </div>
               </div>
             </div>
@@ -451,6 +474,7 @@ const App = () => {
                   className="map-image"
                 />
                 <div className="map-overlay">
+                  <p>📍 Via Milano 13, Cassano D'adda</p>
                   <p>Clicca per aprire in Google Maps</p>
                 </div>
               </div>
@@ -464,8 +488,9 @@ const App = () => {
         <div className="container">
           <div className="footer-content">
             <div className="footer-section">
-              <h3>Star Pizzeria & Kebab</h3>
-              <p>Dove tradizione e sapore si incontrano da tre generazioni.</p>
+              <h3>Star Pizzeria&Kebap</h3>
+              <p>Dove la tradizione della pizzeria incontra l'autenticità del kebab.</p>
+              <p>Impasto a lenta lievitazione e ingredienti selezionati dal 2011.</p>
             </div>
 
             <div className="footer-section">
@@ -480,20 +505,20 @@ const App = () => {
 
             <div className="footer-section">
               <h4>Contatti</h4>
-              <p>📍 Via Roma 123, Roma</p>
-              <p>📞 +39 123 456 789</p>
-              <p>✉️ info@starpizzeriakebab.it</p>
+              <p>📍 Via Milano 13, Cassano D'adda</p>
+              <p>📞 +39 0363 376 006</p>
+              <p>✉️ anilcocen2011@gmail.com</p>
             </div>
 
             <div className="footer-section">
               <h4>Orari</h4>
-              <p>Lunedì - Domenica</p>
-              <p>12:00 - 24:00</p>
+              <p>Martedì - Domenica<br/>11:00 - 23:30</p>
+              <p>Lunedì: Chiuso</p>
             </div>
           </div>
 
           <div className="footer-bottom">
-            <p>&copy; 2024 Star Pizzeria & Kebab. Tutti i diritti riservati.</p>
+            <p>&copy; 2024 Star Pizzeria&Kebap. Tutti i diritti riservati.</p>
           </div>
         </div>
       </footer>
